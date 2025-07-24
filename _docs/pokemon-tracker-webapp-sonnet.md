@@ -1,5 +1,3 @@
-I love your systematic approach to learning these technologies! Building a Pokemon Card Collection Tracker is an excellent project choice because it covers all the essential patterns you'll encounter in backend and infrastructure work. Let me break this down into progressive Acceptance Requirements (ARs) that will teach you each technology layer while building toward your career goals.
-
 ## Learning Path Overview
 
 Before diving into the ARs, let me explain the learning strategy. We'll build this project in layers, starting with the core backend concepts and gradually adding complexity. Each AR focuses on one major concept while reinforcing previous learning. This mirrors how real-world applications evolve and how you'll work as a backend/SRE engineer.
