@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "user-service"
+version = "1.0.0"
+description = "User authentication and management microservice"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.1"
+uvicorn = {extras = ["standard"], version = "^0.24.0"}
+motor = "^3.3.2"           # Async MongoDB driver
+pymongo = "^4.6.0"         # MongoDB operations
+pydantic = {extras = ["email"], version = "^2.5.0"}  # Data validation with email support
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}  # JWT handling
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}  # Password hashing
+python-multipart = "^0.0.6"  # Form data handling
+structlog = "^23.2.0"      # Structured logging
+python-dotenv = "^1.0.0"   # Environment variables
+prometheus-client = "^0.19.0"  # Metrics for SRE monitoring
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-asyncio = "^0.21.1"
+httpx = "^0.25.2"          # For testing FastAPI
+black = "^23.11.0"         # Code formatting
+flake8 = "^6.1.0"          # Code linting
+mypy = "^1.7.1"            # Type checking
+pre-commit = "^3.5.0"      # Git hooks
+
+[tool.poetry.group.test.dependencies]
+pytest-cov = "^4.1.0"     # Test coverage
+factory-boy = "^3.3.0"    # Test data factories
+mongomock-motor = "^0.0.21"  # Mock MongoDB for testing
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
